@@ -1,0 +1,12 @@
+#python
+__pycache__/
+*.pyc
+alembic.ini
+alembic/
+#Ambiente
+.env
+.env/
+venv/
+.venv/
+#  midia e arquivo
+*.db
