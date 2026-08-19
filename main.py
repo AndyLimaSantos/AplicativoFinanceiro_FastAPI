@@ -1,10 +1,13 @@
 from fastapi import FastAPI
 from passlib.context import CryptContext
 from dotenv import load_dotenv
+
 import os
 
 load_dotenv()  # Carrega as variáveis de ambiente do arquivo .env
-SECERET_KEY = os.getenv("SECRET_KEY")  # Obtém a chave secreta do arquivo .env
+SECRET_KEY = os.getenv("SECRET_KEY")  # Obtém a chave secreta do arquivo .env
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
+ALGORITHM = os.getenv("ALGORITHM")
 
 app = FastAPI()
 
