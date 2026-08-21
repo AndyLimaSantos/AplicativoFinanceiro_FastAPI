@@ -41,7 +41,7 @@ async def auth():
     return {"message": "Rota de autenticação funcionando!"} 
 
 
-@auth_router.post("/criar_usuario") #Criar um novo úsuario no sistema.
+@auth_router.post("/criar-usuario") #Criar um novo úsuario no sistema.
 async def Criar_Usuario(cliente: ClienteSchemas, session: Session = Depends(pegar_sessao_db)):
     #Verificar se o email já existe no banco de dados
     cliente_existente = session.query(Cliente).filter(Cliente.email == cliente.email).first()
