@@ -63,7 +63,7 @@ async def Login(login_schemas : LoginSchemas, session: Session = Depends(pegar_s
     #precisamos de um loginschemas que vai conter as informações que precisam paa o login
     usuario = autentificar_usuario(login_schemas.email, login_schemas.senha, session)
     if not usuario:
-        raise HTTPException(status_code = 400, detail="Úsuario não encontrado ou cedeênciais invalída")
+        raise HTTPException(status_code = 400, detail="Úsuario não encontrado ou credenciais invalída")
     else:
         #criar um token para o úsuario utilizar nas outras partes do istema e poder continuar com o acesso sem precisar sair.
         access_token = criar_token(login_schemas.email)
